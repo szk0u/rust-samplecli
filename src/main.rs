@@ -2,6 +2,7 @@ extern crate core;
 
 use std::fs::File;
 use std::io::{BufRead, BufReader, stdin};
+use std::path::PathBuf;
 use clap::Parser;
 
 use anyhow::{bail, ensure, Context, Result};
@@ -16,7 +17,7 @@ struct Cli {
     verbose: bool,
 
     #[arg(value_name = "FILE")]
-    formula_file: Option<String>,
+    formula_file: Option<PathBuf>,
 }
 
 fn main() -> Result<()> {
